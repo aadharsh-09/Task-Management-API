@@ -62,4 +62,18 @@ const updateTask = async (req, res) => {
     }
 };
 
-module.exports = { createTask, getTasks, getTaskById, getTasksByTitle, updateTask };
+const deleteTask = async (req, res) => {
+    try {
+        const task = await Task.findByIdAndDelete(req.params.id);
+
+        if (!task) {
+            return res.status(404).json({ message: "Task not found" });
+        }
+
+        res.status(200).json({ message: "Task deleted successfully" });
+    } catch (error) {
+        res.status(400).json({ message: "Invalid task ID" });
+    }
+};
+
+module.exports = { createTask, getTasks, getTaskById, getTasksByTitle, updateTask, deleteTask };
