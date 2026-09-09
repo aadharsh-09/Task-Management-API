@@ -44,4 +44,22 @@ const getTasksByTitle = async (req, res) => {
     }
 };
 
-module.exports = { createTask, getTasks, getTaskById, getTasksByTitle };
+const updateTask = async (req, res) => {
+    try {
+        const task = await Task.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true, runValidators: true }
+        );
+
+        if (!task) {
+            return res.status(404).json({ message: "Task not found" });
+        }
+
+        res.status(200).json(task);
+    } catch (error) {
+        res.status(400).json({ message: "Invalid task ID or data" });
+    }
+};
+
+module.exports = { createTask, getTasks, getTaskById, getTasksByTitle, updateTask };
