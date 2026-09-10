@@ -10,17 +10,17 @@ const createTask = async (req, res, next) => {
     }
 };
 
-const getTasks = async (req, res) => {
+const getTasks = async (req, res, next) => {
     try {
         const tasks = await Task.find();
 
         res.status(200).json(tasks);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 };
 
-const getTaskById = async (req, res) => {
+const getTaskById = async (req, res, next) => {
     try {
         const task = await Task.findById(req.params.id);
 
@@ -30,21 +30,21 @@ const getTaskById = async (req, res) => {
 
         res.status(200).json(task);
     } catch (error) {
-        res.status(400).json({ message: "Invalid task ID" });
+        next(error);
     }
 };
 
-const getTasksByTitle = async (req, res) => {
+const getTasksByTitle = async (req, res, next) => {
     try {
         const tasks = await Task.find({ title: req.params.title });
 
         res.status(200).json(tasks);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 };
 
-const updateTask = async (req, res) => {
+const updateTask = async (req, res, next) => {
     try {
         const task = await Task.findByIdAndUpdate(
             req.params.id,
@@ -58,30 +58,11 @@ const updateTask = async (req, res) => {
 
         res.status(200).json(task);
     } catch (error) {
-        if (error.name === "ValidationError") {
-            const errors = {};
-
-            for (const field in error.errors) {
-                errors[field] = error.errors[field].message;
-            }
-
-            return res.status(400).json({
-                message: "Validation failed",
-                errors
-            });
-        }
-
-        if (error.name === "CastError") {
-            return res.status(400).json({
-                message: "Invalid task ID"
-            });
-        }
-
-        res.status(500).json({ message: "Server error" });
+        next(error);
     }
 };
 
-const deleteTask = async (req, res) => {
+const deleteTask = async (req, res, next) => {
     try {
         const task = await Task.findByIdAndDelete(req.params.id);
 
@@ -91,7 +72,7 @@ const deleteTask = async (req, res) => {
 
         res.status(200).json({ message: "Task deleted successfully" });
     } catch (error) {
-        res.status(400).json({ message: "Invalid task ID" });
+        next(error);
     }
 };
 
