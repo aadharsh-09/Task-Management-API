@@ -22,12 +22,13 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/tasks",
-          "protocol": "http",
+          "raw": "https://task-management-api-sqo6.onrender.com/api/tasks",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "task-management-api-sqo6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "api",
             "tasks"
@@ -41,22 +42,14 @@
       "request": {
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
-          "raw": "http://localhost:3000/api/tasks",
-          "protocol": "http",
+          "raw": "https://task-management-api-sqo6.onrender.com/api/tasks",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "task-management-api-sqo6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "api",
             "tasks"
@@ -70,22 +63,14 @@
       "request": {
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
-          "raw": "http://localhost:3000/api/tasks/6aa4f6f76a55cc40df7b822c",
-          "protocol": "http",
+          "raw": "https://task-management-api-sqo6.onrender.com/api/tasks/6aa4f6f76a55cc40df7b822c",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "task-management-api-sqo6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "api",
             "tasks",
@@ -100,22 +85,14 @@
       "request": {
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
-          "raw": "http://localhost:3000/api/tasks/title/GCSRM%20Task",
-          "protocol": "http",
+          "raw": "https://task-management-api-sqo6.onrender.com/api/tasks/title/GCSRM%20Task",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "task-management-api-sqo6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "api",
             "tasks",
@@ -141,12 +118,13 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/tasks/6aa4f6f76a55cc40df7b822c",
-          "protocol": "http",
+          "raw": "https://task-management-api-sqo6.onrender.com/api/tasks/6aa4f6f76a55cc40df7b822c",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "task-management-api-sqo6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "api",
             "tasks",
@@ -161,22 +139,14 @@
       "request": {
         "method": "DELETE",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
-          "raw": "http://localhost:3000/api/tasks/6aa502556a55cc40df7b8231",
-          "protocol": "http",
+          "raw": "https://task-management-api-sqo6.onrender.com/api/tasks/6aa502556a55cc40df7b8231",
+          "protocol": "https",
           "host": [
-            "localhost"
+            "task-management-api-sqo6",
+            "onrender",
+            "com"
           ],
-          "port": "3000",
           "path": [
             "api",
             "tasks",
